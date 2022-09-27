@@ -50,3 +50,39 @@ def about():
 @views.route('/contact')
 def contact():
     return render_template('contact.html')
+
+@views.route('/currency')
+def currency():
+    return render_template('currency.html')
+
+@views.route('/bst')
+def bst():
+    return render_template('bst.html')
+
+@views.route('/ossemen')
+def ossemen():
+    return render_template('ossemen.html')
+
+@views.route('/offleash')
+def offlease():
+    return render_template('offleash.html')
+
+@views.route('/spaceinvaders')
+def spaceinvaders():
+    return render_template('spaceinvaders.html')
+
+@views.route('/dreamlog')
+def dreamlog():
+    return render_template('dreamlog.html')
+
+@views.route('/todolist')
+def todolist():
+    return render_template('todolist.html')
+
+@views.route('/rickandmorty')
+def rickandmorty():
+    return render_template('rickandmorty.html')
+
+@views.route('/beergen')
+def beergen():
+    return render_template('beergen.html')
