@@ -1,10 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+
+ p {text-align: center; font-family: "Trebuchet MS"}
+ h1 {text-align: center;font-family: "Trebuchet MS";  font-size: xx-large}
+ h2 {text-align: center;font-family:"Trebuchet MS"}
+
+ /* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+.column2 {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+.column3 {
+  width: 20%;
+  padding: 5px;
+}
+.fit {
+  max-width: 99%;
+  max-height: 99%;
+     display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+ .imageContainer {
+    float: left;
+}
+div {
+display: flex;
+justify-content: center;
+}
+
+p {
+    text-align: center;
+}
+
+ </style>
+
     <meta charset="UTF-8">
-    <title>svr</title>
+    <title>SVR</title>
 </head>
 <body>
+<h1> Support Vector Regression Via Gradient Descent </h1>
+            <h2>What is Support Vector Regression?</h2>
+            <p> Support Vector Regression (SVR) is a supervised learning algorithm derived from Support Vector Machine (SVM). SVM is a classification algorithm used to divide data into two groups. SVR is a regression and is used to predict discrete values, typically used with time-series data and forecasting.
+            </p>
+<div class="row">
+  <div class="column">
+    <img src="{{ url_for('static', filename='SVM.png') }}" style="width:100%">
+
+  </div>
+  <div class="column">
+    <img src="{{ url_for('static', filename='SVR.png') }}" style="width:100%">
+  </div>
+
+</div>
+            <p> The cost function is defined as:</p>
+
+            <img src="{{ url_for('static', filename='costfunction.png') }}" class="fit"/>
+
+            <p> Where the loss function is defined depending on the data.
+            </p>
+
+            <h2>My Project</h2>
+    <p> Use SVR to create a Currency Exchange Prediction Model for Mexico and the United States. </p>
+ <p> my cost function was defined as:</p>
+            <img src="{{ url_for('static', filename='mycostfunction.png') }}" class="fit"/>
+<p> Where I chose the e-insensitive loss function, typically used for currency exchange forecasting according to literature. </p>
+
+<p>Train using monthly data from 1993 to 2020 and test using data for 2021. In the process, test for various values of C, Learning Rates and ε. I am going to grade the fit of my model using
+       the Root Mean Square Error (RMSE), where the goal is to minimize it.
+ </p>
+
+<p> In the paper “Large-scale support vector regression with budgeted stochastic gradient descent,” Li introduced a Stochastic Gradient Descent (SGD) method for SVR using the e-insensitive loss function. The SGD algorithm that was used with the SVR cost function was Pegasos.
+ </p>
+
+<p> The algorithm is as follows:</p>
+<p> Minimize w: </p>
+            <img src="{{ url_for('static', filename='pegasos1.png') }}" class="fit"/>
+
+<p>Where w is a random point. Once you initialize your w, update your w vector until the iteration number is reached. (iteration number defined depending on your system). The update is defined as: </p>
+
+            <img src="{{ url_for('static', filename='pegasos2.png') }}" class="fit" />
+<h2> My algorithm:</h2>
+
+<div class="row">
+  <div class="column2">
+    <img src="{{ url_for('static', filename='myalgorithm.png') }}" style="width:100%">
+
+  </div>
+  <div class="column2">
+    <img src="{{ url_for('static', filename='myalgorithm2.png') }}" style="width:100%">
+  </div>
+</div>
+<h2> My Implementation:</h2>
+<p> Test C ranging from 1.0e-9 to 1 </p>
+<p> Learning rate of 1.0e-5 - 0.1 </p>
+<p>Standard epsilon value of 0.0001 (typical epsilon parameter used in past work)
+ </p>
+
 
 </body>
 </html>
