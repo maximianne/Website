@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+
+ p {text-align: center;}
+ h1 {text-align: center;}
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: black;
+  color: white;
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home </title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+<p >
+    <button class="button button1">about</button>
+    <button class="button button1">featured</button>
+     <a href=portfolio ><button class="button button1">portfolio</button></a>
+    <button class="button button1">contact</button>
+</p>
+<div>
+        {%  block content %}
+        <h1 style="font-family:verdana;"> Maximianne Castaneda </h1>
+            <p>This is some text in a paragraph.</p>
+
+        {%  endblock  %}
+    </div>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='index.js')}}"
+    ></script>
+</body>
+</html>
