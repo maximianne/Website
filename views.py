@@ -4,7 +4,7 @@ views = Blueprint(__name__,"views")
 
 @views.route("/")
 def home():
-    return render_template("index", name="Bob")
+    return render_template("index")
 
 @views.route("/json")
 def get_json():
@@ -26,3 +26,27 @@ def machine_learning_project():
 @views.route('/portfolio')
 def portfolio():
     return render_template('portfolio.html')
+
+@views.route('/featured')
+def featured():
+    return render_template('featured.html')
+
+@views.route('/svr')
+def svr():
+    return render_template('svr.html')
+
+@views.route('/spotiboard')
+def spotiboard():
+    return render_template('spotiboard.html')
+
+@views.route('/btssql')
+def btssql():
+    return render_template('btssql.html')
+
+@views.route('/about')
+def about():
+    return render_template('about.html')
+
+@views.route('/contact')
+def contact():
+    return render_template('contact.html')

@@ -3,8 +3,11 @@
 <head>
     <style>
 
- p {text-align: center;}
- h1 {text-align: center;}
+ p {text-align: right; font-family: "Trebuchet MS"}
+  p1 {text-align: center; font-family: "Trebuchet MS"}
+ h1 {text-align: center;font-family: "Trebuchet MS";  font-size: xx-large}
+ h2 {text-align: center;font-family:"Trebuchet MS"}
+
 .button {
   border: none;
   color: white;
@@ -16,6 +19,8 @@
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
+    font-family: "Trebuchet MS"
+
 }
 
 .button1 {
@@ -34,21 +39,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home </title>
+    <title> Maximianne </title>
      <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
 </head>
 <body>
 <p >
-    <button class="button button1">about</button>
-    <button class="button button1">featured</button>
+     <a href=about ><button class="button button1">about</button></a>
+     <a href=featured ><button class="button button1">featured</button></a>
      <a href=portfolio ><button class="button button1">portfolio</button></a>
-    <button class="button button1">contact</button>
+     <a href=contact ><button class="button button1">contact</button></a>
 </p>
 <div>
         {%  block content %}
-        <h1 style="font-family:verdana;"> Maximianne Castaneda </h1>
-            <p>This is some text in a paragraph.</p>
-
+        <h1> Maximianne Castaneda </h1>
         {%  endblock  %}
     </div>
 
